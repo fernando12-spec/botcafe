@@ -1,47 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Bot - Controle de Camera</title>
-    <link rel="stylesheet" href="styles/popup.css">
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; font-family: Arial, sans-serif; padding: 10px; margin: 0; }
+    .hidden { display: none; }
+    input, button { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+    .session-item { border-bottom: 1px solid #eee; padding: 8px 0; display: flex; justify-content: space-between; align-items: center; }
+    .session-item button { width: auto; margin: 0; padding: 4px 8px; background: #ff4d4d; color: white; border: none; cursor: pointer; }
+    .error { color: red; font-size: 12px; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📷 CAFE BOT</h1>
-            <p class="subtitle">Enhanced Fake Camera v8.0.21</p>
-        </header>
+  <h2>Cafe Bot - Sessões</h2>
 
-        <div class="status-section">
-            <h2>📡 Status</h2>
-            <div id="deviceStatus" class="status-box">
-                <p class="status-inactive">Nenhum dispositivo ativo</p>
-            </div>
-        </div>
+  <div id="auth-section">
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="password" id="password" placeholder="Palavra-passe">
+    <button id="btn-login">Entrar</button>
+    <div id="login-error" class="error"></div>
+  </div>
 
-        <div class="active-devices">
-            <h2>🔌 Dispositivos Ativos</h2>
-            <div id="devicesList" class="devices-list">
-                <p class="no-devices">Carregue midia na pagina para ativar dispositivos</p>
-            </div>
-        </div>
+  <div id="dashboard-section" class="hidden">
+    <p>Ligado como: <strong id="user-email"></strong></p>
+    <h3>Dispositivos Ativos:</h3>
+    <div id="sessions-list"></div>
+    <button id="btn-logout" style="background: #555; color: white; border: none;">Terminar Sessão Geral</button>
+  </div>
 
-        <div class="info-section">
-            <h3>ℹ️ Informacoes</h3>
-            <ul>
-                <li>Max. 10 dispositivos por sessao</li>
-                <li>Suporta fotos e videos</li>
-                <li>Injecao persistente continua</li>
-                <li>Suporte a multiplas abas</li>
-            </ul>
-        </div>
-
-        <footer>
-            <button id="clearBtn" class="btn-danger">🗑️ Limpar Tudo</button>
-        </footer>
-    </div>
-
-    <script src="popup.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>

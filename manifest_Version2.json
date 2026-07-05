@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Cafe Bot - Enhanced Fake Camera",
   "version": "8.0.21",
-  "description": "Versão Otimizada Definitiva com Injeção Contínua Persistente",
+  "description": "Versao Otimizada Definitiva com Injecao Continua Persistente",
   "permissions": [
     "storage",
     "tabs",

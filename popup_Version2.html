@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Bot - Controle de Câmera</title>
+    <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📷 CAFE BOT</h1>
+            <p class="subtitle">Enhanced Fake Camera v8.0.21</p>
+        </header>
+
+        <div class="status-section">
+            <h2>📡 Status</h2>
+            <div id="deviceStatus" class="status-box">
+                <p class="status-inactive">Nenhum dispositivo ativo</p>
+            </div>
+        </div>
+
+        <div class="active-devices">
+            <h2>🔌 Dispositivos Ativos</h2>
+            <div id="devicesList" class="devices-list">
+                <p class="no-devices">Carregue mídia na página para ativar dispositivos</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>ℹ️ Informações</h3>
+            <ul>
+                <li>Máx. 10 dispositivos por sessão</li>
+                <li>Suporta fotos e vídeos</li>
+                <li>Injeção persistente contínua</li>
+                <li>Suporte a múltiplas abas</li>
+            </ul>
+        </div>
+
+        <footer>
+            <button id="clearBtn" class="btn-danger">🗑️ Limpar Tudo</button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

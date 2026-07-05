@@ -3,18 +3,29 @@
 <head>
   <meta charset="utf-8">
   <style>
-    body { width: 320px; font-family: Arial, sans-serif; padding: 10px; margin: 0; }
+    body { width: 340px; font-family: Arial, sans-serif; padding: 12px; margin: 0; background: #fafafa; color: #333; }
     .hidden { display: none; }
-    input, button { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
-    .session-item { border-bottom: 1px solid #eee; padding: 8px 0; display: flex; justify-content: space-between; align-items: center; }
-    .session-item button { width: auto; margin: 0; padding: 4px 8px; background: #ff4d4d; color: white; border: none; cursor: pointer; }
-    .error { color: red; font-size: 12px; }
+    input, button { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; border-radius: 4px; border: 1px solid #ccc; }
+    button { background: #007bff; color: white; border: none; cursor: pointer; font-weight: bold; }
+    button:hover { background: #0056b3; }
+    
+    /* Estilos do teu painel original */
+    .panel-section { background: white; border: 1px solid #e0e0e0; padding: 10px; margin-bottom: 10px; border-radius: 6px; }
+    .panel-title { font-size: 14px; font-weight: bold; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+    .panel-content { font-size: 12px; color: #666; line-height: 1.4; }
+    
+    /* Estilos das sessões do Firebase */
+    .session-item { border-bottom: 1px solid #eee; padding: 6px 0; display: flex; justify-content: space-between; align-items: center; }
+    .session-item:last-child { border: none; }
+    .session-item button { width: auto; margin: 0; padding: 4px 8px; background: #dc3545; font-size: 11px; }
+    .session-item button:hover { background: #bd2130; }
+    .error { color: #dc3545; font-size: 12px; margin-top: 4px; }
   </style>
 </head>
 <body>
-  <h2>Cafe Bot - Sessões</h2>
 
   <div id="auth-section">
+    <h2 style="font-size: 18px; margin-top: 0;">📷 CAFE BOT - Autenticação</h2>
     <input type="email" id="email" placeholder="E-mail">
     <input type="password" id="password" placeholder="Palavra-passe">
     <button id="btn-login">Entrar</button>
@@ -22,10 +33,40 @@
   </div>
 
   <div id="dashboard-section" class="hidden">
-    <p>Ligado como: <strong id="user-email"></strong></p>
-    <h3>Dispositivos Ativos:</h3>
-    <div id="sessions-list"></div>
-    <button id="btn-logout" style="background: #555; color: white; border: none;">Terminar Sessão Geral</button>
+    
+    <div style="font-size: 11px; color: #888; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+      <span>👤 <strong id="user-email"></strong></span>
+      <a href="#" id="btn-logout" style="color: #dc3545; text-decoration: none; font-weight: bold;">Sair</a>
+    </div>
+
+    <h2 style="font-size: 16px; margin-top: 0; margin-bottom: 12px;">📷 CAFE BOT</h2>
+    <p style="font-size: 11px; color: #888; margin-top: -10px;">Enhanced Fake Camera v8.0.21</p>
+
+    <div class="panel-section">
+      <div class="panel-title">📡 Status</div>
+      <div id="local-status" class="panel-content">Nenhum dispositivo ativo</div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">🔌 Dispositivos Ativos Localmente</div>
+      <div id="local-devices" class="panel-content">Carregue midia na pagina para ativar dispositivos</div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-title">ℹ️ Informacoes</div>
+      <div class="panel-content">
+        Max. 10 dispositivos por sessao<br>
+        Suporta fotos e videos<br>
+        Injecao persistente continua<br>
+        Suporte a multiplas abas
+      </div>
+    </div>
+
+    <div class="panel-section" style="border-top: 2px solid #007bff;">
+      <div class="panel-title" style="color: #007bff;">🌐 Todas as Sessões na Nuvem</div>
+      <div id="sessions-list" class="panel-content">A carregar sessões...</div>
+    </div>
+
   </div>
 
   <script src="popup.js"></script>

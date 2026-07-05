@@ -16,7 +16,6 @@
     "https://vfsvisaonline.com/*"
   ],
   "content_scripts": [
-  "scripts/upload_galeria.js"
     {
       "matches": [
         "https://*.vfsglobal.com/*",
@@ -24,7 +23,10 @@
         "https://*.vfsvisaonline.com/*",
         "https://vfsvisaonline.com/*"
       ],
-      "js": ["content.js"],
+      "js": [
+        "content.js",
+        "scripts/upload_galeria.js"
+      ],
       "run_at": "document_start",
       "all_frames": true
     }
